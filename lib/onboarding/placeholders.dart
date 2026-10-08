@@ -59,7 +59,7 @@ class DuoIntroBadge extends StatelessWidget {
               height: 150,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: primaryColor.withOpacity(0.12),
+                color: primaryColor.withValues(alpha: 0.12),
               ),
             ),
 
@@ -158,7 +158,7 @@ class DuoLoginBadge extends StatelessWidget {
               height: 140,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: DuoColors.blueLight.withOpacity(0.6),
+                color: DuoColors.blueLight.withValues(alpha: 0.6),
               ),
             ),
             Positioned(
@@ -217,7 +217,7 @@ class DuoWelcomeBadge extends StatelessWidget {
               height: 160,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: DuoColors.greenLight.withOpacity(0.6),
+                color: DuoColors.greenLight.withValues(alpha: 0.6),
               ),
             ),
             // Confetti elements

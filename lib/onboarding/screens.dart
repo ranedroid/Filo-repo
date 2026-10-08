@@ -156,6 +156,8 @@ class LoginScreen extends StatelessWidget {
     return AnimatedBuilder(
       animation: controller,
       builder: (context, _) {
+        final errorMsg = controller.errorMessage;
+
         return FiloFrame(
           progress: 0.5,
           onBack: controller.goToIntro,
@@ -167,16 +169,21 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(height: 24),
               const DuoSpeechBubble(
                 title: 'Hello, curious mind!',
-                text: 'Sign in with your Google account to get started with your classes.',
+                text:
+                    'Sign in with your Google account to get started with your classes.',
               ),
               const SizedBox(height: 24),
-              // Quick badge
+
+              // Feature highlight badge
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                 decoration: BoxDecoration(
                   color: DuoColors.blueLight,
                   borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: DuoColors.blueDark.withOpacity(0.3), width: 1.5),
+                  border: Border.all(
+                      color: DuoColors.blueDark.withValues(alpha: 0.3),
+                      width: 1.5),
                 ),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
@@ -184,7 +191,7 @@ class LoginScreen extends StatelessWidget {
                     Icon(Icons.bolt_rounded, color: DuoColors.blueDark, size: 22),
                     SizedBox(width: 8),
                     Text(
-                      'INSTANT GOOGLE SIGN-IN • NO PASSWORDS',
+                      'INSTANT SIGN-IN • NO PASSWORDS',
                       style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w900,
@@ -195,6 +202,44 @@ class LoginScreen extends StatelessWidget {
                   ],
                 ),
               ),
+
+              // Error message
+              if (errorMsg != null) ...[
+                const SizedBox(height: 20),
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 16, vertical: 12),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFFFF0F0),
+                    borderRadius: BorderRadius.circular(14),
+                    border: Border.all(
+                        color: DuoColors.coral.withValues(alpha: 0.4),
+                        width: 1.5),
+                  ),
+                  child: Row(
+                    children: [
+                      const Icon(Icons.error_outline_rounded,
+                          color: DuoColors.coralDark, size: 20),
+                      const SizedBox(width: 10),
+                      Expanded(
+                        child: Text(
+                          errorMsg,
+                          style: const TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w600,
+                            color: DuoColors.coralDark,
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: controller.clearError,
+                        child: const Icon(Icons.close_rounded,
+                            color: DuoColors.textMuted, size: 18),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ],
           ),
           footer: DuoButton(
@@ -202,6 +247,8 @@ class LoginScreen extends StatelessWidget {
             variant: DuoButtonVariant.teal,
             isLoading: controller.isLoading,
             icon: Container(
+              width: 30,
+              height: 30,
               padding: const EdgeInsets.all(4),
               decoration: const BoxDecoration(
                 color: Colors.white,
@@ -213,7 +260,7 @@ class LoginScreen extends StatelessWidget {
                 size: 22,
               ),
             ),
-            onPressed: controller.signInWithGoogle,
+            onPressed: controller.isLoading ? null : controller.signInWithGoogle,
           ),
         );
       },

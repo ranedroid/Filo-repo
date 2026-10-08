@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'dashboard/home_dashboard.dart';
 import 'onboarding/design.dart';
 import 'onboarding/models.dart';
 import 'onboarding/onboarding_controller.dart';
 import 'onboarding/screens.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  try {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+  } catch (e) {
+    debugPrint('Firebase initialization notice: $e');
+  }
   runApp(const FiloApp());
 }
 
@@ -41,6 +51,12 @@ class FiloRootFlow extends StatefulWidget {
 
 class _FiloRootFlowState extends State<FiloRootFlow> {
   final OnboardingController _controller = OnboardingController();
+
+  @override
+  void initState() {
+    super.initState();
+    _controller.tryRestoreSession();
+  }
 
   @override
   void dispose() {

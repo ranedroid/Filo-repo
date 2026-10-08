@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "310049809996",
+    "project_id": "filo-team-dev-2026",
+    "storage_bucket": "filo-team-dev-2026.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:310049809996:android:af3f59f7b4a998477876e9",
+        "android_client_info": {
+          "package_name": "com.example.filo_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXQtt-lT5ePvvoLY7EsN1_qB8ONaVsfCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

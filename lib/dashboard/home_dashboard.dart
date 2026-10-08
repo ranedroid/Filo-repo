@@ -50,62 +50,29 @@ class HomeDashboardScreen extends StatelessWidget {
                       ),
                       const SizedBox(width: 14),
 
-                      // Streak Counter (Fire)
-                      Row(
-                        children: const [
-                          Icon(Icons.local_fire_department_rounded, color: DuoColors.coral, size: 24),
-                          SizedBox(width: 4),
-                          Text(
-                            '1',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w900,
-                              color: DuoColors.coral,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(width: 16),
-
-                      // Gems Counter (Diamonds)
-                      Row(
-                        children: const [
-                          Icon(Icons.diamond_rounded, color: DuoColors.blue, size: 22),
-                          SizedBox(width: 4),
-                          Text(
-                            '50',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w900,
-                              color: DuoColors.blue,
-                            ),
-                          ),
-                        ],
-                      ),
-
                       const Spacer(),
 
-                      // Replay Onboarding Button
+                      // Sign Out Button
                       GestureDetector(
-                        onTap: controller.reset,
+                        onTap: controller.signOut,
                         child: Container(
                           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                           decoration: BoxDecoration(
-                            color: DuoColors.greenSurface,
+                            color: DuoColors.cardBg,
                             borderRadius: BorderRadius.circular(12),
-                            border: Border.all(color: DuoColors.green, width: 1.5),
+                            border: Border.all(color: DuoColors.borderGrey, width: 1.5),
                           ),
                           child: Row(
                             children: const [
-                              Icon(Icons.replay_rounded, size: 16, color: DuoColors.greenDark),
+                              Icon(Icons.logout_rounded, size: 16, color: DuoColors.textMuted),
                               SizedBox(width: 4),
                               Text(
-                                'REPLAY',
+                                'SIGN OUT',
                                 style: TextStyle(
                                   fontSize: 11,
                                   fontWeight: FontWeight.w900,
                                   letterSpacing: 0.8,
-                                  color: DuoColors.greenDark,
+                                  color: DuoColors.textMuted,
                                 ),
                               ),
                             ],

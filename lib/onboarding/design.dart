@@ -326,7 +326,7 @@ class DuoProgressBar extends StatelessWidget {
                     width: (targetWidth - 8).clamp(0.0, constraints.maxWidth),
                     height: 3,
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.4),
+                      color: Colors.white.withValues(alpha: 0.4),
                       borderRadius: BorderRadius.circular(3),
                     ),
                   ),

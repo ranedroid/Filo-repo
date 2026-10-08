@@ -12,7 +12,20 @@
           "package_name": "com.example.filo_app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "310049809996-n6rislao5u4m15o2v4nuvi2oj54dhter.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.filo_app",
+            "certificate_hash": "f3f72ca149c55819c0409075fa4637c60452dc30"
+          }
+        },
+        {
+          "client_id": "310049809996-nrdmnlcu0jfpinaojvh7q6qenmh4qj7n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAXQtt-lT5ePvvoLY7EsN1_qB8ONaVsfCo"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "310049809996-nrdmnlcu0jfpinaojvh7q6qenmh4qj7n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "310049809996-biqu87ud872j0h4uulpe21curv4kabub.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.filoApp"
+              }
+            }
+          ]
         }
       }
     }

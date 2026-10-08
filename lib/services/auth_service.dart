@@ -20,8 +20,10 @@ class AuthService {
               // Firebase Console -> Authentication -> Sign-in method -> Google
               // -> Web SDK configuration -> Web client ID
               clientId: kIsWeb
-                  ? '310049809996-YOUR_WEB_CLIENT_ID.apps.googleusercontent.com'
+                  ? '310049809996-nrdmnlcu0jfpinaojvh7q6qenmh4qj7n.apps.googleusercontent.com'
                   : null,
+              serverClientId:
+                  '310049809996-nrdmnlcu0jfpinaojvh7q6qenmh4qj7n.apps.googleusercontent.com',
               scopes: ['email', 'profile'],
             );
 
